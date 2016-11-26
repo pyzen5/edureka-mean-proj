@@ -1,10 +1,11 @@
 var chalk = require('chalk');
 var mongoose = require( 'mongoose' );
 
-var dbURI = 'mongodb://localhost/test';
+//var dbURI = 'mongodb://localhost/test';
 
 
-//var dbURI = 'mongodb://your_username:your_password@ds043615.mongolab.com:43615/leavethemarks';
+var dbURI = 'mongodb://admin:admin@ds139327.mlab.com:39327/mdb';
+
 
 
 mongoose.connect(dbURI);

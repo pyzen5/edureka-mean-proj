@@ -18,7 +18,8 @@ exports.addEmployee=function(req,res){
    var email=req.body.email;
    var dob=req.body.dob;
    var department=req.body.department;
-   var gender =req.body.gender;   
+   var gender =req.body.gender;
+   var age =req.body.age; 
 
    var newEmployee=new Employee();
    newEmployee.name=name;
@@ -26,6 +27,7 @@ exports.addEmployee=function(req,res){
    newEmployee.dob=dob;
    newEmployee.department=department;
    newEmployee.gender=gender;
+   newEmployee.age=age;
 
    newEmployee.save(function(err,savedEmployee){
        if(err){
@@ -60,9 +62,10 @@ exports.updateEmployee=function(req,res){
    var dob=req.body.dob;
    var department=req.body.department;
    var gender =req.body.gender;
+   var age =req.body.age;
   
 
-   Employee.update({_id:employeeId}, { $set: {name:name,email:email,dob:dob,department:department,gendder:gender} }, { multi: true }, function (err) {
+   Employee.update({_id:employeeId}, { $set: {name:name,email:email,dob:dob,department:department,gender:gender,age:age} }, { multi: true }, function (err) {
        if (err) return handleError(err);
        res.status(200).send();
     });
